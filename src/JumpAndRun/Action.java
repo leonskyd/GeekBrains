@@ -17,17 +17,13 @@ public class Action {
         Cat cat1 = new Cat("Lippi", 2,50);
         Robot robot1 = new Robot("ZTX-200", 1, 500);
 
-
-
-        //human1.passTheRace(medium);
-        
         //ACTION
         System.out.println(" \n And Action \n ");
 
 
         passTheCompetition(Monaco, human1);
         System.out.println(" ");
-        passTheCompetition(CatTest, cat1); // не придумал как сделать так чтобы метод прекращался если препятствие не пройдено.
+        passTheCompetition(CatTest, cat1);
     }
 
    public static void passTheCompetition(Barier[] A, Participant B) {
@@ -36,10 +32,18 @@ public class Action {
         for (Barier barier : A) {
             if (barier instanceof Wall) {
                 a = barier.getValue();
-                B.jumpA(a);}
+                if (B.jumpA(a) == false) {
+                    System.out.println("race is Over. It had failed!");
+                    break;
+                }
+            }
             if (barier instanceof Track) {
                 b = barier.getValue();
-                B.runA(b);}
+                if (B.runA(b) == false) {
+                    System.out.println("race is Over. It had failed!");
+                    break;
+                }
+            }
         }
     }
 
