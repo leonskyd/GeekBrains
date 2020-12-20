@@ -15,7 +15,7 @@ public class FruitBox <Orange, Fruit, Apple>{
         this.size = 0;
         this.fruitWeight = FRUITWEIGHT;
         this.boxWeight = this.size * this.fruitWeight;
-        this.fruit = new Fruit(FRUITWEIGHT); // Почему-то Идеа показывает здесь ошибку но вроде все работает.
+        this.fruit = new Fruitbox.Fruit(FRUITWEIGHT); 
     }
 
 
